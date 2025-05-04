@@ -19,6 +19,11 @@ require("nvim-tree").setup({
   },
   filters = {
     dotfiles = false,
+    custom = {
+            "%.uid",
+            "%.import",
+            ".git",
+        }
   },
 })
 
