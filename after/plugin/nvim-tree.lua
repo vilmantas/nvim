@@ -1,8 +1,9 @@
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>lf', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 
 require("nvim-tree").setup({
   view = {
-    width = 30,
+    width = 40,
     side = "left",
     number = false,
     relativenumber = false,
