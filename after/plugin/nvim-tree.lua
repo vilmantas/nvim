@@ -23,7 +23,7 @@ require("nvim-tree").setup({
     custom = {
             "%.uid",
             "%.import",
-            ".git",
+            "^.git$",
         }
   },
 })
