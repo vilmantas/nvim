@@ -8,9 +8,9 @@ return {
         auto_trigger = true,
         keymap = {
           accept = "<C-l>",
-          next = "<C-n>",
-          prev = "<C-p>",
-          dismiss = "<C-]>",
+          next = "<C-k>",
+          prev = "<C-]>",
+          dismiss = "<C-x>",
         },
       },
       panel = { enabled = false },
