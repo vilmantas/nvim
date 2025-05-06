@@ -10,7 +10,6 @@ return {
             disable_italics = true,
             italics = false,
             highlight_groups = {
-                CursorLine = { bg = "rose" },
                 CursorLineNr = { fg = "love" },
                 LineNr = { fg = "love" },
                 StatusLineNC = { fg = "muted" },
