@@ -6,15 +6,25 @@ vim.keymap.set('n', '<leader><leader>', builtin.oldfiles, { desc = "Telescope ol
 
 
 local function grep_visual_selection()
-  local text = vim.fn.getreg("v")
-  builtin.live_grep({ default_text = text })
+    -- Yank current selection into register v
+    vim.cmd('normal! "vy')
+
+    -- Get the content and sanitize
+    local text = vim.fn.getreg("v"):gsub("\n", ""):gsub("^%s+", ""):gsub("%s+$", "")
+
+    -- Only search if there's something meaningful
+    if text ~= "" then
+        require("telescope.builtin").live_grep({ default_text = text })
+    else
+        print("No valid selection")
+    end
 end
 
 
 vim.keymap.set("v", "<leader>ps", function()
-  -- Yank visual selection to register v
-  vim.cmd('normal! "vy')
-  grep_visual_selection()
+    -- Yank visual selection to register v
+    vim.cmd('normal! "vy')
+    grep_visual_selection()
 end, { noremap = true, silent = true })
 
 
