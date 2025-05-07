@@ -41,3 +41,18 @@ vim.api.nvim_create_autocmd({'BufEnter', 'QuitPre'}, {
     end
   end
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    -- Save cursor position
+    local save_cursor = vim.api.nvim_win_get_cursor(0)
+
+    -- Remove trailing whitespace
+    vim.cmd([[silent! %s/\s\+$//e]])
+
+    -- Restore cursor position
+    vim.api.nvim_win_set_cursor(0, save_cursor)
+  end,
+})
+
