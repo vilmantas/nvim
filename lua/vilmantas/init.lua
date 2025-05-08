@@ -1,8 +1,9 @@
-vim.o.background = "dark" 
+vim.o.background = "light"
 
 require("vilmantas.remap")
 require("vilmantas.lazy")
 require("vilmantas.set")
+require("vilmantas.custom.toggle_theme")
 
 -- Make :bd and :q behave as usual when tree is visible
 vim.api.nvim_create_autocmd({'BufEnter', 'QuitPre'}, {
