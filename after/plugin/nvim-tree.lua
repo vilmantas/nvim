@@ -109,7 +109,9 @@ require("nvim-tree").setup({
     custom = {
       "%.uid",
       "%.import",
+      "^.github$",
       "^.git$",
+      "^.ruby-lsp$",
     },
   },
   actions = {
