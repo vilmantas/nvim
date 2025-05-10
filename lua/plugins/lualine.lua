@@ -13,7 +13,11 @@ return {
         require('lualine').setup({
             sections = {
                 lualine_c = {
-                    file_with_parent
+                    file_with_parent,
+                    {
+                        'buffers',
+                        show_modified_status = true,
+                    }
                 },
             }
         })
